@@ -1,9 +1,11 @@
-# macOS
-.DS_Store
-
 # Folders
 build/
 images/
+# Files
+package-lock.json
+
+# macOS
+.DS_Store
 
 # Logs
 logs
