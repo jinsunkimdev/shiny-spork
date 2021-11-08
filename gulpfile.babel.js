@@ -1,27 +1,45 @@
 "use strict";
 import gulp from "gulp";
+const sass = require("gulp-sass")(require("sass"));
+import csso from "gulp-csso";
 import del from "del";
-var gsass = require("gulp-sass")(require("sass"));
-import gimage from "gulp-image";
-
+//build path
 const routes = {
   html: {
-    src: "src/*.html",
-    dest: "build",
+    src: "index.html",
+    watch: "index.html",
   },
-  scss: {
+  sass: {
     src: "src/scss/style.scss",
-    dest: "build/css",
+    dest: "dist/css",
+    watch: "src/scss/**.scss",
+  },
+  reset: {
+    src: "src/scss/reset.scss",
+    dest: "dist/css",
   },
 };
-//Build
-export const buildHtml = () =>
-  gulp.src(routes.html.src).pipe(gulp.dest(routes.html.dest));
-export const buildSass = () =>
-  gulp
-    .src(routes.scss.src)
-    .pipe(gsass().on("error", gsass.logError))
-    .pipe(gulp.dest(routes.scss.dest));
-//Cleaning Folder
-export const clean = () => del(["build"]);
-export const dev = gulp.series([clean, buildHtml, buildSass]);
+//gulp tasks
+const buildStyle = () => {
+  return gulp
+    .src(routes.sass.src)
+    .pipe(sass().on("error", sass.logError))
+    .pipe(csso())
+    .pipe(gulp.dest(routes.sass.dest));
+};
+
+const buildReset = () => {
+  return gulp
+    .src(routes.reset.src)
+    .pipe(sass().on("error", sass.logError))
+    .pipe(csso())
+    .pipe(gulp.dest(routes.sass.dest));
+};
+
+const watch = () => {
+  gulp.watch(routes.sass.watch, buildStyle);
+  gulp.watch(routes.html.watch);
+};
+//gulp series
+export const dev = gulp.series([buildStyle, buildReset, watch]);
+export const clean = () => del(["dist"]);

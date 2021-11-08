@@ -1,6 +1,6 @@
-@import '_reset.scss';
 @import '_variables';
 
-.testSyn{
+h1{
     color: $base-color;
+    background-color: $test-color;
 }
