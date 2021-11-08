@@ -1,13 +1,17 @@
 "use strict";
 import gulp from "gulp";
+import htmlmin from "gulp-htmlmin";
 const sass = require("gulp-sass")(require("sass"));
 import csso from "gulp-csso";
 import del from "del";
+import webserver from "gulp-webserver";
+
 //build path
 const routes = {
   html: {
-    src: "index.html",
-    watch: "index.html",
+    src: "src/index.html",
+    dest: "dist",
+    watch: "src/index.html",
   },
   sass: {
     src: "src/scss/style.scss",
@@ -20,6 +24,13 @@ const routes = {
   },
 };
 //gulp tasks
+const buildIndex = () => {
+  return gulp
+    .src(routes.html.src)
+    .pipe(htmlmin({ collapseWhitespace: true }))
+    .pipe(gulp.dest(routes.html.dest));
+};
+
 const buildStyle = () => {
   return gulp
     .src(routes.sass.src)
@@ -38,8 +49,22 @@ const buildReset = () => {
 
 const watch = () => {
   gulp.watch(routes.sass.watch, buildStyle);
-  gulp.watch(routes.html.watch);
+  gulp.watch(routes.html.watch, buildIndex);
 };
+
+const webServer = () =>
+  gulp.src("dist").pipe(
+    webserver({
+      livereload: true,
+      open: true,
+    })
+  );
 //gulp series
-export const dev = gulp.series([buildStyle, buildReset, watch]);
+const liveServer = gulp.series([webServer, watch]);
+export const dev = gulp.series([
+  buildIndex,
+  buildStyle,
+  buildReset,
+  liveServer,
+]);
 export const clean = () => del(["dist"]);
