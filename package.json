@@ -16,18 +16,23 @@
     "@babel/preset-env": "^7.16.0",
     "@babel/register": "^7.16.5",
     "babel-register": "^6.26.0",
+    "babelify": "^10.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
+    "gulp-bro": "^2.0.0",
     "gulp-csso": "^4.0.1",
     "gulp-image": "^6.3.1",
+    "gulp-imagemin": "^8.0.0",
     "gulp-sass": "^5.0.0",
+    "gulp-webp": "^4.0.1",
     "gulp-webserver": "^0.9.1",
     "sass": "^1.43.4"
   },
   "dependencies": {
     "del": "^6.0.0",
-    "gulp-concat": "^2.6.1",
     "gulp-htmlmin": "^5.0.1",
-    "gulp-jsmin": "^0.1.5"
+    "gulp-jsmin": "^0.1.5",
+    "uglifyify": "^5.0.2",
+    "upgrade": "^1.1.0"
   }
 }
