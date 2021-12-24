@@ -3,6 +3,8 @@ import gulp from "gulp";
 import htmlmin from "gulp-htmlmin";
 const sass = require("gulp-sass")(require("sass"));
 import csso from "gulp-csso";
+import concat from "gulp-concat";
+import image from "gulp-image";
 import del from "del";
 import webserver from "gulp-webserver";
 
@@ -10,17 +12,26 @@ import webserver from "gulp-webserver";
 const routes = {
   html: {
     src: "src/index.html",
-    dest: "dist",
+    dest: "build",
     watch: "src/index.html",
   },
   sass: {
     src: "src/scss/style.scss",
-    dest: "dist/css",
+    dest: "build/css/",
     watch: "src/scss/**.scss",
+  },
+  js: {
+    src: "src/js/*.js",
+    dest: "build/js/",
+    watch: "src/js/**.js",
+  },
+  img: {
+    src: "src/img/**",
+    dest: "build/img/",
   },
   reset: {
     src: "src/scss/reset.scss",
-    dest: "dist/css",
+    dest: "build/css/",
   },
 };
 //gulp tasks
@@ -39,6 +50,17 @@ const buildStyle = () => {
     .pipe(gulp.dest(routes.sass.dest));
 };
 
+const buildConcat = () => {
+  return gulp
+    .src(routes.js.src)
+    .pipe(concat("main.js"))
+    .pipe(gulp.dest(routes.js.dest));
+};
+
+const buildImg = () => {
+  return gulp.src(routes.img.src).pipe(image()).pipe(routes.img.dest);
+};
+
 const buildReset = () => {
   return gulp
     .src(routes.reset.src)
@@ -50,10 +72,11 @@ const buildReset = () => {
 const watch = () => {
   gulp.watch(routes.sass.watch, buildStyle);
   gulp.watch(routes.html.watch, buildIndex);
+  gulp.watch(routes.js.watch, buildJs);
 };
 
 const webServer = () =>
-  gulp.src("dist").pipe(
+  gulp.src("build").pipe(
     webserver({
       livereload: true,
       open: true,
@@ -64,7 +87,9 @@ const liveServer = gulp.series([webServer, watch]);
 export const dev = gulp.series([
   buildIndex,
   buildStyle,
+  buildConcat,
+  buildImg,
   buildReset,
   liveServer,
 ]);
-export const clean = () => del(["dist"]);
+export const clean = () => del(["build"]);

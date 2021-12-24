@@ -1,9 +1,9 @@
 # Folders
-build/
-images/
 # Files
+build/
 package-lock.json
-
+node_modules/
+img/
 # macOS
 .DS_Store
 
@@ -44,11 +44,8 @@ bower_components
 # node-waf configuration
 .lock-wscript
 
-# Compiled binary addons (https://nodejs.org/api/addons.html)
-build/Release
 
 # Dependency directories
-node_modules/
 jspm_packages/
 
 # Snowpack dependency directory (https://snowpack.dev/)
