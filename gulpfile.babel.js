@@ -4,7 +4,7 @@ import htmlmin from "gulp-htmlmin";
 const sass = require("gulp-sass")(require("sass"));
 import csso from "gulp-csso";
 import gbro from "gulp-bro";
-import imagemin from "gulp-image";
+import imagemin from "gulp-imagemin";
 import babelify from "babelify";
 import del from "del";
 import webserver from "gulp-webserver";
@@ -66,7 +66,10 @@ const buildGbro = () => {
 };
 
 const buildImg = () => {
-  gulp.src(routes.img.src).pipe(imagemin()).pipe(gulp.dest("routes.img.dest"));
+  return gulp
+    .src(routes.img.src)
+    .pipe(imagemin())
+    .pipe(gulp.dest(routes.img.dest));
 };
 
 const buildReset = () => {
@@ -91,6 +94,7 @@ const webServer = () =>
       open: true,
     })
   );
+
 //gulp series
 const liveServer = gulp.series([webServer, watch]);
 export const dev = gulp.series([
