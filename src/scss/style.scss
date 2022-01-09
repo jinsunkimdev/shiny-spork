@@ -1,6 +1,15 @@
 @import '_variables';
-
-h1{
-    color: $base-color;
-    background-color: $test-color;
+*{
+    box-sizing: border-box;
 }
+
+body{
+    margin: 0;
+    font-size: 1rem;
+    color: $font-color-base;
+}
+
+.hidden{
+    display: none;
+}
+

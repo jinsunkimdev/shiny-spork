@@ -22,7 +22,7 @@ const routes = {
     watch: "src/scss/**.scss",
   },
   js: {
-    src: "src/js/main.js",
+    src: "src/js/*",
     dest: "build/js/",
     watch: "src/js/**/*.js",
   },
@@ -51,7 +51,7 @@ const buildStyle = () => {
     .pipe(gulp.dest(routes.sass.dest));
 };
 
-const buildGbro = () => {
+const buildBrowserify = () => {
   return gulp
     .src(routes.js.src)
     .pipe(
@@ -65,7 +65,7 @@ const buildGbro = () => {
     .pipe(gulp.dest(routes.js.dest));
 };
 
-const buildImg = () => {
+const buildImgMin = () => {
   return gulp
     .src(routes.img.src)
     .pipe(imagemin())
@@ -83,8 +83,8 @@ const buildReset = () => {
 const watch = () => {
   gulp.watch(routes.sass.watch, buildStyle);
   gulp.watch(routes.html.watch, buildIndex);
-  gulp.watch(routes.img.src, buildImg);
-  gulp.watch(routes.js.watch, buildGbro);
+  gulp.watch(routes.img.src, buildImgMin);
+  gulp.watch(routes.js.watch, buildBrowserify);
 };
 
 const webServer = () =>
@@ -100,8 +100,8 @@ const liveServer = gulp.series([webServer, watch]);
 export const dev = gulp.series([
   buildIndex,
   buildStyle,
-  buildGbro,
-  buildImg,
+  buildBrowserify,
+  buildImgMin,
   buildReset,
   liveServer,
 ]);
