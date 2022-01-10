@@ -3,25 +3,24 @@ const clockDisplay = document.getElementById("clockDisplay");
 
 const getClock = () => {
   const date = new Date();
-  let hou = date.getHours();
+  let hour = date.getHours();
   let min = date.getMinutes();
   let sec = date.getSeconds();
-  let ses = "AM";
+  let sess = "AM";
 
-  if (hou == 0) {
-    hou = 12;
+  if (hour == 0) {
+    hour = 12;
+  }
+  if (hour > 12) {
+    hour = hour - 12;
+    sess = "PM";
   }
 
-  if (hou > 12) {
-    hou = hou - 12;
-    ses = "PM";
-  }
-
-  hou = hou < 10 ? "0" + hou : hou;
+  hour = hour < 10 ? "0" + hour : hour;
   min = min < 10 ? "0" + min : min;
   sec = sec < 10 ? "0" + sec : sec;
 
-  const currentTime = hou + ":" + min + ":" + sec + " " + ses;
+  const currentTime = hour + ":" + min + ":" + sec + " " + sess;
 
   clockDisplay.innerText = currentTime;
   clockDisplay.textContent = currentTime;

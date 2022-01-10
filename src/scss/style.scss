@@ -9,7 +9,38 @@ body{
     color: $font-color-base;
 }
 
+@media (min-width: 320px){
+    .header-status{
+        margin-top: .3em;
+        align-items:center;
+        display:flex;
+        justify-content: space-around;
+    }    
+
+
+.logo-main{
+    margin: 0 auto;
+    margin-top: -3em;
+    max-width: 100%;
+    display: block;
+    width: 80%;
+    z-index:-1;
+    position:relative;
+}
+
 .hidden{
     display: none;
 }
+
+}//media end
+
+/* ==================
+    Typography
+===================== */
+/* buttons */
+/* footer */
+
+/* ==================
+    general layout
+===================== */
 

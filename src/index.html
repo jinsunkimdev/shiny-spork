@@ -8,12 +8,23 @@
         <title>Sass Test</title>
     </head>
     <body>
-        <form id="login-form" >
-            <input type="text" placeholder="What's your name?">
-            <input type="submit" value="Log In">
-        </form>
-        <h1 id="greeting" class="hidden"></h1>
-        <div id="clockDisplay" class="clock" onload="getClock()"></div>
+        <div class="container">
+            <header>
+                <div class="header-status">
+                <div id="clockDisplay" class="clock">
+                </div>
+                <form id="login-form" >
+                    <input type="text" placeholder="What's your name?">
+                    <input type="submit" value="Log In">
+                </form>
+                <h1 id="greeting" class="hidden"></h1>
+</div>
+                <div><img class="logo-main" src="img/Shiny-Spork-Logo-Removebg.svg" alt="main logo"></div>
+            </header>
+            <main>
+            </main>
+            <footer></footer>
+        </div>
         <script src="js/main.js"></script>
         <script src="js/clock.js"></script>
     </body>
