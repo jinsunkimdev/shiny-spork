@@ -1,5 +1,5 @@
 "use strict";
-//valiable
+//variable
 const tasksForm = document.querySelector("#tasks__input--form");
 const tasksList = document.getElementById("tasks__list");
 const tasksInput = document.querySelector("#tasks__input--form input");
