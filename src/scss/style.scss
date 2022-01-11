@@ -7,10 +7,15 @@ body{
     margin: 0;
     font-size: 1rem;
     color: $font-color-base;
+    text-align: center;
 }
 
-@media (min-width: 320px){
-    .header-status{
+@media (min-width: 375px){
+    .container{
+        display:flex;
+        flex-direction:column;
+    }
+    .header__status{
         margin-top: .3em;
         align-items:center;
         display:flex;
@@ -18,19 +23,41 @@ body{
     }    
 
 
-.logo-main{
-    margin: 0 auto;
-    margin-top: -3em;
-    max-width: 100%;
-    display: block;
-    width: 80%;
-    z-index:-1;
-    position:relative;
-}
+    .logo__main{
+        margin: 0 auto;
+        margin-top: -3em;
+        margin-bottom: -3em;
+        max-width: 100%;
+        display: block;
+        width: 80%;
+        z-index:-1;
+        position:relative;
+    }
 
-.hidden{
-    display: none;
-}
+    .hidden{
+        display: none;
+    }
+
+    main{
+        margin-top: 1em;
+    }
+    .task__item{
+        display: flex;
+        justify-content: center;
+    }
+    .task__item--check{
+        width: .7em;
+        height: .7em;
+        border-radius: 50%;
+        border: 1px solid black;
+        margin-right: 1em;
+    }
+
+    footer{
+        position: absolute;
+        bottom: 0px;
+        min-width: 100%;
+    }
 
 }//media end
 

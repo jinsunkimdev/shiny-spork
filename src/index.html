@@ -5,27 +5,36 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/reset.css">
-        <title>Sass Test</title>
+        <title>TODO - by Jinsunkim</title>
     </head>
     <body>
         <div class="container">
             <header>
-                <div class="header-status">
-                <div id="clockDisplay" class="clock">
+                <div class="header__status">
+                    <div id="clockDisplay" class="clock">
+                    </div>
+                    <h1 id="greeting" class="hidden"></h1>
                 </div>
-                <form id="login-form" >
+                <div><img class="logo__main" src="img/Shiny-Spork-Logo-Removebg.svg" alt="main logo"></div>
+                <form id="login__form" >
                     <input type="text" placeholder="What's your name?">
                     <input type="submit" value="Log In">
                 </form>
-                <h1 id="greeting" class="hidden"></h1>
-</div>
-                <div><img class="logo-main" src="img/Shiny-Spork-Logo-Removebg.svg" alt="main logo"></div>
             </header>
             <main>
+                <section class="tasks">
+                    <ul id="tasks__list"></ul>
+                </section>
             </main>
-            <footer></footer>
+            <footer>
+                <form id="tasks__input--form">
+                    <input id="tasks__input" type="text" >
+                    <input id="tasks__btn" type="submit" value="Input">
+                </form>
+            </footer>
         </div>
-        <script src="js/main.js"></script>
+        <script src="js/main.js" defer></script>
         <script src="js/clock.js"></script>
+        <script src="js/tasks.js"></script>
     </body>
 </html>

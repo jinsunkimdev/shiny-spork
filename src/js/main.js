@@ -1,11 +1,11 @@
 "use strict";
-const loginForm = document.querySelector("#login-form");
-const loginInput = document.querySelector("#login-form input");
+const loginForm = document.querySelector("#login__form");
+const loginInput = document.querySelector("#login__form input");
 const greeting = document.querySelector("#greeting");
 const HIDDEN_CLASSNAME = "hidden";
 
-const onLoginSubmit = (whatever) => {
-  whatever.preventDefault();
+const onLoginSubmit = (clickButton) => {
+  clickButton.preventDefault();
   loginForm.classList.add(HIDDEN_CLASSNAME);
   const username = loginInput.value;
   localStorage.setItem("username", username);
@@ -15,4 +15,3 @@ const onLoginSubmit = (whatever) => {
 
 loginForm.addEventListener("submit", onLoginSubmit);
 const savedUsername = localStorage.getItem("username");
-console.log(savedUsername);
