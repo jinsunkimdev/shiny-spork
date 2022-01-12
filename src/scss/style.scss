@@ -10,7 +10,8 @@ body{
     text-align: center;
 }
 
-@media (min-width: 375px){
+@media (min-width: 320px)
+and(max-width: 425px){
     .container{
         display:flex;
         flex-direction:column;
@@ -21,7 +22,6 @@ body{
         display:flex;
         justify-content: space-around;
     }    
-
 
     .logo__main{
         margin: 0 auto;
@@ -41,6 +41,9 @@ body{
     main{
         margin-top: 1em;
     }
+    .main__container{
+        height: 40vh;
+    }
     .task__item{
         display: flex;
         justify-content: center;
@@ -52,6 +55,19 @@ body{
         border: 1px solid black;
         margin-right: 1em;
     }
+    .task-completed {
+    transition: 0.5s;
+    transform: scale(90%);
+    text-decoration: line-through;
+    color: rgb(150, 150, 150);
+    opacity: 0;
+}
+
+.task_list_empty {
+    transition: 0s;
+    background-position: center;
+    background-image: no-repeat url("../img/EMPTY.png");
+}
 
     footer{
         position: absolute;
