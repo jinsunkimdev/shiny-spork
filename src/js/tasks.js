@@ -4,7 +4,7 @@ const tasksForm = document.querySelector("#tasks__input--form");
 const tasksList = document.getElementById("tasks__list");
 const tasksInput = document.querySelector("#tasks__input--form input");
 const tasksBtn = document.getElementById("tasks__btn");
-const mainContainer = document.querySelector(".main__container");
+const mainContainer = document.getElementsByClassName("main__container");
 
 //function
 /*listing TODO*/
@@ -24,16 +24,9 @@ const printTasks = (clickButton) => {
   const taskInputValue = tasksInput.value;
   taskText.innerText = taskInputValue;
   tasksInput.value = "";
-  if (tasksList.childNodes.length == 1) {
-    setTimeout(() => {
-      mainContainer.classList.add("task_list_empty");
-    }, 500);
-  } else
-    setTimeout(() => {
-      mainContainer.classList.remove("task_list_empty");
-    });
+
   removeTask(taskCheckBtn);
-};
+}; //end printTasks func
 
 tasksForm.addEventListener("submit", printTasks);
 
@@ -45,11 +38,14 @@ const removeTask = (taskCheckBtn) => {
     setTimeout(() => {
       parent.remove();
     }, 400);
-
-    if (tasksList.childNodes.length == 1) {
-      setTimeout(() => {
-        mainContainer.classList.add("task_list_empty");
-      }, 500);
-    }
   });
+  console.log(tasksList.childNodes);
+}; //end removeTask func
+
+const handleEmptyTasks = () => {
+  if (tasksList.children == 1) {
+    setInterval(() => mainContainer.classList.add("task_list_empty"), 500);
+  }
 };
+
+window.onload = handleEmptyTasks();
