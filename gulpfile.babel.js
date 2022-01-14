@@ -38,7 +38,7 @@ const routes = {
 };
 //gulp tasks
 const gh = () => {
-  gulp.src("build/**/*").pipe(ghPages());
+  return gulp.src("./build/**/*").pipe(ghPages());
 };
 
 const buildIndex = () => {
@@ -110,7 +110,7 @@ export const dev = gulp.series([
   buildReset,
   liveServer,
 ]);
-export const clean = () => del(["build"]);
+export const clean = () => del(["build/", ".publish"]);
 export const deploy = gulp.series([
   buildReset,
   buildImgMin,
@@ -118,4 +118,5 @@ export const deploy = gulp.series([
   buildStyle,
   buildBrowserify,
   gh,
+  clean,
 ]);
