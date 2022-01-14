@@ -8,6 +8,7 @@ import imagemin from "gulp-imagemin";
 import babelify from "babelify";
 import del from "del";
 import webserver from "gulp-webserver";
+import ghPages from "gulp-gh-pages";
 
 //build path
 const routes = {
@@ -36,6 +37,10 @@ const routes = {
   },
 };
 //gulp tasks
+const gh = () => {
+  gulp.src("build/**/*").pipe(ghPages());
+};
+
 const buildIndex = () => {
   return gulp
     .src(routes.html.src)
@@ -106,3 +111,11 @@ export const dev = gulp.series([
   liveServer,
 ]);
 export const clean = () => del(["build"]);
+export const deploy = gulp.series([
+  buildReset,
+  buildImgMin,
+  buildIndex,
+  buildStyle,
+  buildBrowserify,
+  gh,
+]);

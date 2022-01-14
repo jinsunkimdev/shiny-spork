@@ -1,6 +1,8 @@
 "use strict";
 const clockDisplay = document.getElementById("clockDisplay");
-
+const clockSess = document.getElementById("clock__sess");
+const clockHour = document.getElementById("clock__hour");
+const clockMin = document.getElementById("clock__min");
 const getClock = () => {
   const date = new Date();
   let hour = date.getHours();
@@ -11,7 +13,8 @@ const getClock = () => {
   if (hour == 0) {
     hour = 12;
   }
-  if (hour > 12) {
+
+  if (hour >= 12) {
     hour = hour - 12;
     sess = "PM";
   }
@@ -20,10 +23,11 @@ const getClock = () => {
   min = min < 10 ? "0" + min : min;
   sec = sec < 10 ? "0" + sec : sec;
 
-  const currentTime = hour + ":" + min + ":" + sec + " " + sess;
+  const currentTime = sess + " " + hour + ":" + min;
 
-  clockDisplay.innerText = currentTime;
-  clockDisplay.textContent = currentTime;
+  clockSess.innerText = sess;
+  clockHour.innerText = hour;
+  clockMin.innerText = min;
   setTimeout(getClock, 1000);
 };
 getClock();

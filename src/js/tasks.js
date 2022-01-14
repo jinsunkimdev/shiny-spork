@@ -12,10 +12,10 @@ const printTasks = (clickButton) => {
   clickButton.preventDefault();
 
   const taskItem = document.createElement("li");
-  const taskCheckBtn = document.createElement("div");
+  const taskCheckBtn = document.createElement("i");
   const taskText = document.createElement("span");
   taskItem.setAttribute("class", "task__item");
-  taskCheckBtn.setAttribute("class", "task__item--check");
+  taskCheckBtn.setAttribute("class", "fas fa-ghost fa-lg");
   taskText.setAttribute("class", "task__item--text");
 
   tasksList.appendChild(taskItem);

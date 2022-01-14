@@ -3,6 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://kit.fontawesome.com/f97f0278c8.js" crossorigin="anonymous"></script>
         <link rel="stylesheet" href="css/style.css">
         <link rel="stylesheet" href="css/reset.css">
         <title>TODO-by Jinsunkim</title>
@@ -12,13 +13,15 @@
             <header>
                     <div id="gradient-bar" class="header__bar--gradient"></div>
                 <div class="header__status">
-                    <div id="clockDisplay" class="clock">
-                    </div>
+                    <span id="clock__sess" class="text-gradient"></span>
+                    <span id="clock__hour"></span>
+                    <span id="clock__colon" class="blinking">:</span>
+                    <span id="clock__min"></span>
                 </div>
                 <div><img class="logo__main" src="img/Shiny-Spork-Logo-Removebg.svg" alt="main logo"></div>
                 <form id="login__form" >
-                    <input type="text" placeholder="What's your name?">
-                    <input type="submit" value="Log In">
+                    <input type="text" maxlength="7" required placeholder="What's your name?">
+                    <button class="login__button" type="submit">Submit</button>
                 </form>
                 <h1 id="greeting" class="hidden"></h1>
             </header>
@@ -31,12 +34,14 @@
             </main>
             <footer>
                 <form id="tasks__input--form">
-                    <input id="tasks__input" type="text" required >
+                    <input id="tasks__input" maxlength="12" autocomplete="off" type="text" required placeholder="Input Tasks" >
                     <input id="tasks__btn" type="submit" value="Input">
                 </form>
+                <div class="footer__bar--gradient bar--gradient"></div>
             </footer>
         </div>
-        <script src="js/main.js" defer></script>
+        <div class="" id="no-mobile">Sorry, Your Screen is too Big or too Small!<i class="far fa-sad-tear fa-3x"></i></div>
+        <script src="js/main.js" ></script>
         <script src="js/clock.js"></script>
         <script src="js/tasks.js"></script>
         <script src="js/decoration.js"></script>

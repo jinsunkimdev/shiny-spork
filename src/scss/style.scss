@@ -1,36 +1,67 @@
 @import '_variables';
+@import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+
+    #no-mobile{
+    position: absolute;
+    z-index: 99;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #FFD49C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    top:0;
+    }
+
+@media (min-width: 319px)
+and(max-width: 427px){
 *{
     box-sizing: border-box;
 }
 
 body{
-    min-width: 320px;
+    min-width: 319px;
+    min-height: 100vh;
     margin: 0;
+    font-family: 'Press Start 2P', cursive;
     font-size: 1rem;
+    background-color: #FFD49C;
     color: $font-color-base;
+    line-height: 1.6;
     text-align: center;
 }
-
-@media (min-width: 319px)
-and(max-width: 426px){
     .container{
+        font-family: 'Press Start 2P', cursive;
+        min-height:100vh;
+        position: relative;
         display:flex;
         flex-direction:column;
     }
 
     .header__bar--gradient{
         top: 0;
-        margin: 0 auto;
         margin-bottom: 1em;
-        width: 45%;
-        height: .7em;
-        border-radius: 1em;
+        width: 100%;
+        height: 1em;
         background: #c7b9ff;
-         backface-visibility: hidden;
         background: linear-gradient($header-bar-gradient);
-        animation: moveGradient 5s ease infinite;
+        animation: $header-bar-animation;
         background-size: 200% 200%;
+    }
+    .footer__bar--gradient{
+        bottom: 0;
+        margin-top: .5em;
+        width: 100%;
+    }
 
+    .bar--gradient{
+        width: 100%;
+        height: 1em;
+        background: #c7b9ff;
+        background: linear-gradient($header-bar-gradient);
+        animation: $header-bar-animation;
+        background-size: 200% 200%;
     }
 
     @keyframes moveGradient {
@@ -49,9 +80,26 @@ and(max-width: 426px){
     }
 
     .header__status{
+        display:flex;
+        justify-content: center;
         margin-top: .3em;
         align-items:center;
+        color: $font-color-base;
+        letter-spacing: .1em;
+        font-weight: 700;
     }    
+    #clock__sess{
+        margin-right: .2em;
+        letter-spacing: .03em;
+    }
+    #clock__colon{
+        color: #FF66C9;
+    }
+    @keyframes blink-effect { 50% { opacity: 0; } }
+
+    .blinking{
+        animation: blink-effect 1.5s step-end infinite;
+    }
 
     .logo__main{
         margin: 0 auto;
@@ -61,29 +109,109 @@ and(max-width: 426px){
         display: block;
         width: 80%;
         z-index:-1;
-        position:relative;
     }
 
+    #login__form {
+        margin: 0 auto;
+        width: 70%;
+        padding: .3em .6em;
+        border: 2px solid rgba(0,0,0,1);
+        box-shadow : .6em .6em 1px #ffa580, .6em .6em 2px rgba(0,0,0,1);
+    }
+
+    #login__form input{
+        width: 100%;
+        font-size: .7rem;
+        line-height: 1.4rem;
+        font-family: 'Press Start 2P', cursive;
+        border:none;
+        border-bottom: 2px solid rgba(0,0,0,1);
+        outline: none;
+        color: rgba(0,0,0,1);
+        caret-color: tomato;
+    }
+    #login__form input:focus{
+        border-bottom: 2px solid yellow;
+    }
+     #login__form button{
+         margin: 0 auto;
+        color: yellow;
+        padding: 0 .6em;
+        letter-spacing: .1em; 
+        line-height: 1.2em;
+        background-color: #FF66C9;
+        border: 2px solid rgba(0,0,0,1);
+    }
+
+    #login__form button:hover {
+        background-color: rgba(0,0,0,1);
+    }
+
+    #tasks__input--form{
+        display: flex;
+        margin: 0 auto;
+        width: 70%;
+        padding: .3em .6em;
+        border: 2px solid rgba(0,0,0,1);
+        box-shadow : .6em .6em 1px #ffa580, .6em .6em 2px rgba(0,0,0,1);
+    }
+
+    #tasks__input{
+        width: 100%;
+        font-size: .7rem;
+        line-height: 1.4rem;
+        font-family: 'Press Start 2P', cursive;
+        border:none;
+        border-bottom: 2px solid rgba(0,0,0,1);
+        outline: none;
+        color: rgba(0,0,0,1);
+        caret-color: tomato;
+    }
+    #tasks__input:focus{
+        border-bottom: 2px solid tomato;
+    }
+
+    #tasks__btn{
+        color: yellow;
+        padding: 0 .6em;
+        letter-spacing: .1em; 
+        line-height: 1.2em;
+        background-color: #FF66C9;
+        border: 2px solid rgba(0,0,0,1);
+    }
+    #tasks__btn:hover {
+        background-color: rgba(0,0,0,1);
+    }
     .hidden{
         display: none;
     }
 
+    #greeting{
+        color:#CC6896;
+        font-size: 1.1rem;
+        font-weight: 400;
+    }
+
     main{
         margin-top: 1em;
-    }
-    .main__container{
-        height: 40vh;
+        margin-bottom: 1em;
     }
     .task__item{
+        font-size: 1.2rem;
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        margin-left: 15%;
+        margin-top: .5em;
+        margin-bottom: .5em;
     }
-    .task__item--check{
-        width: .7em;
-        height: .7em;
-        border-radius: 50%;
-        border: 1px solid black;
-        margin-right: 1em;
+
+    .task__item--text{
+        margin-left: .3em;
+        font-size: 1.1rem;
+        padding: .3em .6em;
+        align-items: center;
+        align-content: center;
+        border-radius: 2rem;
     }
     .task-completed {
         transition: 0.5s;
@@ -102,11 +230,15 @@ and(max-width: 426px){
     footer{
         position: absolute;
         bottom: 0px;
+        left: 0px;
         min-width: 100%;
     }
 
-}//media end
+    #no-mobile{
+        display: none;
+    }
 
+}//media end
 /* ==================
     Typography
 ===================== */
