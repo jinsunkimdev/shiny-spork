@@ -1,9 +1,9 @@
 "use strict";
 //variable
-const tasksForm = document.querySelector("#tasks__input--form");
+const tasksForm = document.querySelector("#tasks__form");
 const tasksList = document.getElementById("tasks__list");
-const tasksInput = document.querySelector("#tasks__input--form input");
-const tasksBtn = document.getElementById("tasks__btn");
+const tasksInput = document.querySelector("#tasks__form input");
+const tasksBtn = document.querySelector("#tasks__form button ");
 const mainContainer = document.getElementsByClassName("main__container");
 
 //function
@@ -39,13 +39,4 @@ const removeTask = (taskCheckBtn) => {
       parent.remove();
     }, 400);
   });
-  console.log(tasksList.childNodes);
 }; //end removeTask func
-
-const handleEmptyTasks = () => {
-  if (tasksList.children == 1) {
-    setInterval(() => mainContainer.classList.add("task_list_empty"), 500);
-  }
-};
-
-window.onload = handleEmptyTasks();

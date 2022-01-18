@@ -1,3 +1,17 @@
-$font-color-base: #50466B;
-$header-bar-gradient: -45deg, #aad1b6, #b5caf9, #c7b9ff, #f0b9dd, #f3bf99, #fffad1;
+//Font
+
+//General Layout
+//Animation
 $header-bar-animation: moveGradient 10s ease infinite;
+$blinking-effect-animation: blink-effect 1.5s step-end infinite;
+//Color
+$font-color-base: #50466B;
+$bg-color: #FFD49C;
+$header-bar-bg-color: #C7B9FF;
+$header-bar-gradient: -45deg, #aad1b6, #b5caf9, #c7b9ff, #f0b9dd, #f3bf99, #fffad1;
+$scheme-color-pink: #FF66C9;
+$scheme-color-black: rgba(0,0,0,1);
+$box-shadow: .6em .6em 1px #ffa580, .6em .6em 2px rgba(0,0,0,1);
+$caret-color: tomato;
+$button-color: #F3EC99;
+$task-completed-line-color: rgb(150, 150, 150);
