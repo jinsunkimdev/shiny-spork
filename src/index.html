@@ -12,13 +12,24 @@
         <div class="container">
             <header>
                 <div id="header__bar--gradient" class="bar--gradient"></div>
-                <div class="clock__container">
-                    <span id="clock__sess" class="text-gradient"></span>
-                    <span id="clock__hour"></span>
-                    <span id="clock__colon" class="blinking">:</span>
-                    <span id="clock__min"></span>
+                <div class="header__status">
+                    <div class="empty__menu"></div>
+                    <div class="clock__container">
+                        <span id="clock__sess" class="text-gradient"></span>
+                        <span id="clock__hour"></span>
+                        <span id="clock__colon" class="blinking">:</span>
+                        <span id="clock__min"></span>
+                    </div>
+                    <div class="toggle__theme">
+                        <input type="checkbox" class="checkbox" name="toggle" id="toggle__theme--color">
+                        <label for="toggle__theme--color" class="toggle__theme--label">
+                            <i class="fas fa-moon"></i>
+                            <i class="fas fa-sun"></i>
+                            <div class="ball"></div>
+                        </label>
+                    </div>
                 </div>
-                <div><img class="logo__main" src="img/Shiny-Spork-Logo-Removebg.svg" alt="main logo"></div>
+                <div class="logo__cantainer"><img class="logo__main" src="img/Shiny-Spork-Logo-Removebg.svg" alt="main logo"></div>
                 <form id="login__form" class="simple__form" >
                     <input class="simple__form--input" type="text" maxlength="12" required placeholder="What's your name?">
                     <button class="simple__form--button" type="submit">Submit</button>
@@ -48,5 +59,6 @@
         <script src="js/main.js" ></script>
         <script src="js/clock.js"></script>
         <script src="js/tasks.js"></script>
+        <script src="js/theme.js"></script>
     </body>
 </html>
