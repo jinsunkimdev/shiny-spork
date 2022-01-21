@@ -9,11 +9,38 @@
         <title>TODO-by Jinsunkim</title>
     </head>
     <body>
+        <div class="sidebar__container">
+            <div class="sidebar__header">
+                <div class="sidebar__img--container">
+                    <div class="sidebar__close">
+                        <div class="empty__div"></div>
+                        <i class="fas fa-times fa-2x"></i></div>
+                    <img src="img/monalisa.jpeg" alt="Profile Image" srcset="">
+                    <h1 class="profile__name">Hello,There!</h1>
+                </div>
+            </div>
+            <nav class="sidebar__main">
+                <ul class="sidebar__main--list">
+                    <li class="list__element">
+                        <i class="fas fa-home fa-lg"></i>Home</li>
+                    <li class="list__element">
+                        <i class="fas fa-paper-plane fa-lg"></i>Contact</li>
+                    <li class="list__element">
+                        <i class="fas fa-sign-out-alt fa-lg"></i>Logout</li>
+                </ul>
+            </nav>
+            <div class="sidebar__footer">
+                <a href="https://github.com/jinsunkimdev/shiny-spork"><i class="fab fa-github fa-lg"></i></a>
+            </div>
+        </div>
+
         <div class="container">
             <header>
                 <div id="header__bar--gradient" class="bar--gradient"></div>
                 <div class="header__status">
-                    <div class="empty__menu"></div>
+                    <div class="sidebar--button ">
+                        <i class="fas fa-hamburger fa-lg"></i>
+                    </div>
                     <div class="clock__container">
                         <span id="clock__sess" class="text-gradient"></span>
                         <span id="clock__hour"></span>
@@ -51,6 +78,7 @@
                 <div id="footer__bar--gradient" class="bar--gradient"></div>
             </footer>
         </div>
+
         <div class="" id="no-mobile">
             Sorry, recommend setting the browser width 320 ~ 427 or 
             watch it on your cell phone.
