@@ -1,0 +1,12 @@
+#no-mobile{
+    position: absolute;
+    z-index: 99;
+    min-height: 100vh;
+    min-width: 100vw;
+    background-color: #FFD49C;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 3rem;
+    top:0;
+}

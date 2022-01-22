@@ -1,0 +1,37 @@
+/*dark theme*/
+@media (min-width: 319px)
+and(max-width: 427px){
+    .dark{
+        transition: background-color 0.3s ease;
+        background-color: #202124;
+        .toggle__theme--label{
+            background-color: black;
+            transition: background-color 0.3s ease;
+        }
+        .bar--gradient{
+            background: linear-gradient(-45deg, #5F802B, #F2B741, #CAE2BE, #F3EC99, #E8BCA0, #BAA782);
+            animation: $header-bar-animation;
+            background-size: 200% 200%;
+        }
+        #greeting{
+            color: greenyellow;
+        }
+        .simple__form{
+            background-color: #CBD4B0;
+            box-shadow: .6em .6em 3px #7BD66B, .6em .6em 2px rgba(0,0,0,1);
+        }
+        .clock__container{
+            color: #CAE2BE;
+        }
+        .simple__form--button{
+            color: #F3EC99;
+            background-color: #50466B;
+        }
+        .task__item i{
+            color: lightpink;
+        }
+        .task__item--text{
+            color: skyblue;
+        }
+    }
+}

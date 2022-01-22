@@ -1,0 +1,94 @@
+
+@media (min-width: 319px)
+and(max-width: 427px){
+    .sidebar__container{
+        font-family: 'Press Start 2P', cursive;
+        font-size: 1rem;
+        color: #F4F0E0;
+        background-color: #1C1C1C;
+        box-shadow: 0 0 1em #666;
+        border-radius: 0em 1em 1em 0em;
+        position: fixed;
+        height: calc(100vh - 2em);
+        width:  0;
+        left: 0;
+        overflow-x: hidden;
+        transition: 0.5s;
+        margin-top: 1em;
+        margin-bottom: 1em;
+        position: absolute;
+        z-index: 2;
+
+        .sidebar__header{
+            font-size: .7rem;
+            margin-bottom: 3em;
+            img{
+                border: 3px solid transparent;
+                background-image: linear-gradient($header-bar-gradient);
+                animation: $header-bar-animation;
+                background-size: 120% 120%;
+                border-radius: 50%;
+                margin: 0 auto;
+                margin-bottom: 1.5em;
+                max-width: 100%;
+                width: 60%;
+                display: block;
+
+            }
+            i{
+                margin: 1em 1em 0em 0em;
+                cursor: pointer;
+                &:hover{
+                    color: paleturquoise;
+                    animation: spin-animation 1.5s ease;
+                }
+            }
+        }
+        .sidebar__close{
+            display: flex;
+            justify-content: space-between;
+        }
+        @keyframes spin-animation {
+        0% {
+            transform: rotate(0deg);
+        }
+        100% {
+            transform: rotate(359deg);
+        }
+        }
+        .sidebar__main{
+            font-size: .6rem;
+        }
+        .sidebar__footer{
+            display: flex;
+            justify-content: center;
+            height: 5%;
+            width: 100%;
+            border-radius: 0em 0em 1em 0em;
+            position: absolute;
+            align-items: center;
+            bottom: 0;
+            i{
+                color: whitesmoke;
+                margin: 0 auto;
+                margin-bottom: .5em;
+                &:hover{
+                    color: paleturquoise;
+                }
+            } 
+        }
+    }
+    .list__element{
+        display: flex;
+        align-items: center;
+        margin-bottom: 3.5em;
+        margin-left: 20%;
+        cursor: pointer;
+        &:hover{
+            color: paleturquoise;
+        }
+        i{
+            margin-right: .5em;
+        }
+    }
+}

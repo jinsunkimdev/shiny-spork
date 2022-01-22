@@ -1,18 +1,10 @@
 @import '_variables';
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
+@import '_dark.scss';
+@import '_no-mobile';
+@import '_sidebar.scss';
 
-#no-mobile{
-    position: absolute;
-    z-index: 99;
-    min-height: 100vh;
-    min-width: 100vw;
-    background-color: #FFD49C;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 3rem;
-    top:0;
-}
+
 @media (min-width: 319px)
 and(max-width: 427px){
     /* General Layout */
@@ -30,100 +22,6 @@ and(max-width: 427px){
         color: $font-color-base;
         line-height: 1.6;
         text-align: center;
-    }
-    .sidebar__container{
-        font-family: 'Press Start 2P', cursive;
-        font-size: 1rem;
-        color: #F4F0E0;
-        background-color: #1C1C1C;
-        box-shadow: 0 0 1em #666;
-        border: 0px solid transparent;
-        border-left: none;
-        border-image: linear-gradient($header-bar-gradient);
-        border-image-slice: 1;
-        border-radius: 0em 1em 1em 0em;
-        position: fixed;
-        height: calc(100vh - 2em);
-        width:  0;
-        left: 0;
-        overflow-x: hidden;
-        transition: 0.5s;
-        margin-top: 1em;
-        margin-bottom: 1em;
-        position: absolute;
-        z-index: 2;
-
-        .sidebar__header{
-            font-size: .7rem;
-            margin-bottom: 3em;
-            img{
-                border: 3px solid transparent;
-                background-image: linear-gradient($header-bar-gradient);
-                animation: $header-bar-animation;
-                background-size: 120% 120%;
-                border-radius: 50%;
-                margin: 0 auto;
-                margin-bottom: 1.5em;
-                max-width: 100%;
-                width: 60%;
-                display: block;
-
-            }
-            i{
-                margin: 1em 1em 0em 0em;
-                cursor: pointer;
-                &:hover{
-                    color: paleturquoise;
-                    animation: spin-animation 1.5s ease;
-                }
-            }
-        }
-        .sidebar__close{
-            display: flex;
-            justify-content: space-between;
-        }
-        @keyframes spin-animation {
-        0% {
-            transform: rotate(0deg);
-        }
-        100% {
-            transform: rotate(359deg);
-        }
-        }
-        .sidebar__main{
-            font-size: .6rem;
-        }
-        .sidebar__footer{
-            display: flex;
-            justify-content: center;
-            height: 5%;
-            width: 100%;
-            border-radius: 0em 0em 1em 0em;
-            position: absolute;
-            align-items: center;
-            bottom: 0;
-            i{
-                color: whitesmoke;
-                margin: 0 auto;
-                margin-bottom: .5em;
-                &:hover{
-                    color: paleturquoise;
-                }
-            } 
-        }
-    }
-    .list__element{
-        display: flex;
-        align-items: center;
-        margin-bottom: 3.5em;
-        margin-left: 20%;
-        cursor: pointer;
-        &:hover{
-            color: paleturquoise;
-        }
-        i{
-            margin-right: .5em;
-        }
     }
     .container{
         font-family: 'Press Start 2P', cursive;
@@ -153,7 +51,6 @@ and(max-width: 427px){
             }
         }
     }
-    /* Dark Theme */
     .toggle__theme{
         margin: .5em;
         position: relative ;
@@ -195,39 +92,6 @@ and(max-width: 427px){
     }
     .toggle__theme--label i:nth-child(2){
         color: #F14A39;
-    }
-    .dark{
-        transition: background-color 0.3s ease;
-        background-color: #202124;
-        .toggle__theme--label{
-            background-color: black;
-            transition: background-color 0.3s ease;
-        }
-        .bar--gradient{
-            background: linear-gradient(-45deg, #5F802B, #F2B741, #CAE2BE, #F3EC99, #E8BCA0, #BAA782);
-            animation: $header-bar-animation;
-            background-size: 200% 200%;
-        }
-        #greeting{
-            color: greenyellow;
-        }
-        .simple__form{
-            background-color: #CBD4B0;
-            box-shadow: .6em .6em 3px #7BD66B, .6em .6em 2px rgba(0,0,0,1);
-        }
-        .clock__container{
-            color: #CAE2BE;
-        }
-        .simple__form--button{
-            color: #F3EC99;
-            background-color: #50466B;
-        }
-        .task__item i{
-            color: lightpink;
-        }
-        .task__item--text{
-            color: skyblue;
-        }
     }
     main{
         margin-top: 1em;
