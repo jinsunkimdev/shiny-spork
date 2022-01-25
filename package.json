@@ -26,11 +26,11 @@
     "gulp-sass": "^5.0.0",
     "gulp-webp": "^4.0.1",
     "gulp-webserver": "^0.9.1",
+    "regenerator-runtime": "^0.13.9",
     "sass": "^1.43.4"
   },
   "dependencies": {
     "del": "^6.0.0",
-    "dotenv": "^11.0.0",
     "gift": "^0.10.2",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^7.1.0",

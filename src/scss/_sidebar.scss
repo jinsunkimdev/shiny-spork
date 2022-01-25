@@ -13,7 +13,7 @@ and(max-width: 427px){
         width:  0;
         left: 0;
         overflow-x: hidden;
-        transition: 0.5s;
+        transition: 0.4s;
         margin-top: 1em;
         margin-bottom: 1em;
         position: absolute;
@@ -90,5 +90,17 @@ and(max-width: 427px){
         i{
             margin-right: .5em;
         }
+    }
+    .list__element--contact{
+        text-decoration:none;
+        color: #F4F0E0;
+        &:hover{
+            color: paleturquoise;
+        }
+    }
+    #sidebar__advice{
+        color: tomato;
+        font-size: .7rem;
+        line-height: 1.4em;
     }
 }

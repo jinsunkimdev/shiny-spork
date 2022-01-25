@@ -21,13 +21,15 @@
             </div>
             <nav class="sidebar__main">
                 <ul class="sidebar__main--list">
-                    <li class="list__element">
+                    <li class="list__element list__element--home">
                         <i class="fas fa-home fa-lg"></i>Home</li>
                     <li class="list__element">
-                        <i class="fas fa-paper-plane fa-lg"></i>Contact</li>
-                    <li class="list__element">
-                        <i class="fas fa-sign-out-alt fa-lg"></i>Logout</li>
+                        <i class="fas fa-paper-plane fa-lg"></i><a class="list__element--contact" href="https://github.com/jinsunkimdev">Contact</a></li>
+                    <li class="list__element list__element--logout">
+                        <i class="fas fa-sign-out-alt fa-lg "></i>
+                    Logout</li>
                 </ul>
+                <p id="sidebar__advice"></p>
             </nav>
             <div class="sidebar__footer">
                 <a href="https://github.com/jinsunkimdev/shiny-spork"><i class="fab fa-github fa-lg"></i></a>
@@ -88,5 +90,6 @@
         <script src="js/clock.js"></script>
         <script src="js/tasks.js"></script>
         <script src="js/theme.js"></script>
+        <script src="js/gulpEnv.js"></script>
     </body>
 </html>

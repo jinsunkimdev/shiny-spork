@@ -29,7 +29,14 @@ and(max-width: 427px){
         }
         .task__item i{
             color: lightpink;
+        }            
+    #tasks__list{
+        i{
+            &:hover{
+                color: lavender;
+            }
         }
+    }
         .task__item--text{
             color: skyblue;
         }

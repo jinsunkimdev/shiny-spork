@@ -7,7 +7,7 @@ const tasksBtn = document.querySelector("#tasks__form button ");
 const mainContainer = document.getElementsByClassName("main__container");
 
 //function
-/*listing TODO*/
+/*listing todo*/
 const printTasks = (clickButton) => {
   clickButton.preventDefault();
 
@@ -30,7 +30,7 @@ const printTasks = (clickButton) => {
 
 tasksForm.addEventListener("submit", printTasks);
 
-/*remove TODO*/
+/*remove todo*/
 const removeTask = (taskCheckBtn) => {
   taskCheckBtn.addEventListener("click", (e) => {
     let parent = e.target.parentElement;
