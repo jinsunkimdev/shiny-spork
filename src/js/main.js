@@ -21,6 +21,16 @@ const onLoginSubmit = (clickButton) => {
   sidebarGreeting.innerText = username;
   greeting.classList.remove(HIDDEN_CLASSNAME);
 };
+
+const checkingLogin = () => {
+  if (localStorage.length !== 0) {
+    loginForm.classList.add(HIDDEN_CLASSNAME);
+    greeting.innerText = `${localStorage.username}'s Tasks`;
+    greeting.classList.remove(HIDDEN_CLASSNAME);
+    sidebarGreeting.innerText = localStorage.username;
+  }
+};
+
 const handleLogout = () => {
   localStorage.removeItem("username", handleLogout);
   loginInput.value = "";
@@ -40,6 +50,7 @@ const closeSidebar = () => {
 
 //event
 loginForm.addEventListener("submit", onLoginSubmit);
+checkingLogin();
 sidebarLogoutBtn.addEventListener("click", handleLogout);
 sidebarBtn.addEventListener("click", openSidebar);
 sidebarCloseBtn.addEventListener("click", closeSidebar);
