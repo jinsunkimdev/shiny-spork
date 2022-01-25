@@ -79,7 +79,7 @@ web_modules/
 .env
 .env.test
 .env.production
-gulpEnv.js # My custom Envfile
+gulpEnv # My custom Envfile
 
 # parcel-bundler cache (https://parceljs.org/)
 .cache
