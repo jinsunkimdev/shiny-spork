@@ -2,10 +2,10 @@
 ## TODO-List 
 ### [My TODO-LIST Demo](https://jinsunkimdev.github.io/shiny-spork/) [ Not completed yet ]
 
-![Generic badge](https://img.shields.io/badge/gulp-v4.0.2-red.svg)
-![Generic badge](https://img.shields.io/badge/node-v17.0.1-brightgreen.svg)
-[![made-with-javascript](https://img.shields.io/badge/Made%20with-JavaScript-yellow.svg)](https://developer.mozilla.org/ko/docs/Web/JavaScript)
-[![made-with-sass](https://img.shields.io/badge/Made%20with-Sass-ff6984)](https://sass-lang.com/)   
+![Node badge](https://img.shields.io/badge/node-v17.0.1-brightgreen.svg)
+![Gulp badge](https://img.shields.io/badge/Made%20with-gulp-%23CF4647?style=plastic&logo=gulp)
+[![made-with-javascript](https://img.shields.io/badge/Made%20with-javascript-%23F7DF1E?style=plastic&logo=javascript)](https://developer.mozilla.org/ko/docs/Web/JavaScript)
+![Sass badge](https://img.shields.io/badge/Made%20with-sass-%23CC6699?style=plastic&logo=sass)
 
 
 ## THEME
