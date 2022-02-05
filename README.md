@@ -8,7 +8,7 @@
 ![Sass badge](https://img.shields.io/badge/Made%20with-sass-%23CC6699?style=plastic&logo=sass)
 
 
-## THEME
+## LIGHT / DARK THEME
 <div>
  <img src= "https://user-images.githubusercontent.com/69026725/150532416-854ffec1-d9c0-45c9-aee0-fb33d5e8cc20.png", width= "40%", height= "50%">
  <img src= "https://user-images.githubusercontent.com/69026725/151158854-9687e4e3-0019-4cdf-83f2-016ccd22d9fe.png", width= "39%", height= "50%">
