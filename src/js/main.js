@@ -20,6 +20,7 @@ const onLoginSubmit = (clickButton) => {
   greeting.innerText = `${username}'s Tasks`;
   sidebarGreeting.innerText = username;
   greeting.classList.remove(HIDDEN_CLASSNAME);
+  sidebarLogoutBtn.classList.remove(HIDDEN_CLASSNAME);
 };
 
 const checkingLogin = () => {
@@ -28,6 +29,7 @@ const checkingLogin = () => {
     greeting.innerText = `${localStorage.username}'s Tasks`;
     greeting.classList.remove(HIDDEN_CLASSNAME);
     sidebarGreeting.innerText = localStorage.username;
+    sidebarLogoutBtn.classList.remove(HIDDEN_CLASSNAME);
   }
 };
 
@@ -37,6 +39,7 @@ const handleLogout = () => {
   loginForm.classList.remove(HIDDEN_CLASSNAME);
   greeting.classList.add(HIDDEN_CLASSNAME);
   sidebarGreeting.innerText = "Hello,There!";
+  sidebarLogoutBtn.classList.add(HIDDEN_CLASSNAME);
 };
 
 const openSidebar = () => {
