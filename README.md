@@ -1,6 +1,6 @@
 # shiny-spork
 ## TODO-List 
-### [My TODO-LIST Demo](https://jinsunkimdev.github.io/shiny-spork/) [ Not completed yet ]
+### [My TODO-LIST Demo](https://jinsunkimdev.github.io/shiny-spork/)
 
 ![Node badge](https://img.shields.io/badge/node-v17.0.1-brightgreen.svg)
 ![Gulp badge](https://img.shields.io/badge/Made%20with-gulp-%23CF4647?style=plastic&logo=gulp)
